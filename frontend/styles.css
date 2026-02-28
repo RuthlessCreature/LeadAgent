@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f9;
+  color: #1a2233;
+}
+
+header,
+footer {
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #dde3ef;
+}
+
+footer {
+  border-top: 1px solid #dde3ef;
+  border-bottom: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+main {
+  padding: 20px 24px 60px;
+  display: grid;
+  gap: 16px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dbe3f0;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+input,
+select,
+textarea,
+button,
+.link-btn {
+  border: 1px solid #c6d2e7;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+button,
+.link-btn {
+  background: #1e5eff;
+  color: #fff;
+  border-color: #1e5eff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+button:hover,
+.link-btn:hover {
+  filter: brightness(0.95);
+}
+
+.platforms {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e5ebf7;
+  font-size: 13px;
+  text-align: left;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background: #f7f9ff;
+}
+
+pre,
+.panel {
+  background: #f8faff;
+  border: 1px solid #dbe3f0;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 280px;
+  font-size: 12px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+#status {
+  color: #2f6b00;
+  font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .grid.two,
+  .grid.three {
+    grid-template-columns: 1fr;
+  }
+}

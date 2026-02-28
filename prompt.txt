@@ -1,0 +1,378 @@
+LLM可配置，deepseek或者openai或者claude
+
+---
+
+# 一、输入层（Agent 输入规范）
+
+这个模块处理用户定义产品/客户信息的**结构化输入**：
+
+### 1. 产品描述解析
+
+**目标**：从自然语言中提取可比较结构化的字段
+**输入**：用户自然语言产品文本
+**输出结构**：
+
+```
+{
+  product_name,
+  industry_tags,
+  feature_tags,
+  use_cases,
+  target_roles,
+  price_range,
+  exclude_tags
+}
+```
+
+**逻辑要求**：
+
+* LLM 提取实体并标准化为数据库统一标签
+* 多语言输入支持（中英→统一编码）
+* 含不相关词剔除（stop-word）
+
+---
+
+### 2. 理想客户画像（ICP）定义器
+
+**目标**：建立 Ideal Customer Profile
+**字段**：
+
+| 字段               | 类型        | 说明       |
+| ---------------- | --------- | -------- |
+| geography        | list      | 国家/地区    |
+| company_size     | range/int | 员工数区间    |
+| industry         | list      | 行业       |
+| role_titles      | list      | 决策/影响人岗位 |
+| revenue_range    | range     | 营收区间     |
+| technology_stack | list      | 与产品匹配的技术 |
+
+**输出**：标准化 ICP JSON
+**用途**：驱动后续 search & scoring
+
+---
+
+# 二、搜索与执行层（Agent Task Spec）
+
+这个层是你 agent 的 “执行引擎”。每个模块都要明确输入/过程/输出。
+
+---
+
+### 3. 多平台目标搜索
+
+支持平台：
+
+* LinkedIn People/Company Search
+* Facebook / Groups / Marketplace
+* TikTok Creator/Business Pages
+* YouTube Channels
+* Google Search / B2B Sites
+* B2B 数据库 (ZoomInfo/Apollo/Crunchbase) ([BuyerSprint Hub][1])
+
+**输入**：search query + ICP
+**过程**：
+
+1. 生成平台专用查询词
+2. 执行自动浏览器/接口调用
+3. 提取 DOM/raw JSON
+
+**输出**：候选公司/联系人列表
+
+---
+
+### 4. 爬取与反爬配置
+
+**必需组件**：
+
+* 代理池与指纹管理
+* 分布式调度
+* CAPTCHA 处理集成
+* 请求速率控制
+
+**输出**：结构化 HTML/text
+
+---
+
+### 5. 初级抽取器（DOM/Text → JSON）
+
+针对不同平台分别解析：
+
+| 平台              | 抽取字段                  |
+| --------------- | --------------------- |
+| LinkedIn        | 公司名 / 联系人 / 角色 / 公司规模 |
+| Facebook        | 页面名 / Group成员 / 联系邮箱  |
+| TikTok          | 账号名 / bio / 地区标签      |
+| Google B2B page | 公司 / 电话 / 邮件 / 产品     |
+
+输出统一格式：
+
+```
+{
+  company,
+  contact_name,
+  role,
+  platform,
+  raw_text_snippet
+}
+```
+
+---
+
+# 三、评分 & 过滤引擎（核心商业价值）
+
+这个是你商业化卖点：**给线索打分**。不是简单筛选。
+
+---
+
+### 6. 行业匹配评分器
+
+**输入**：公司行业 + 产品行业
+**规则**：
+
+* 精确匹配 + 模糊匹配
+* 使用 vector similarity
+* 动态可配置权重
+
+**输出**：industry_score (0-100)
+
+---
+
+### 7. 采购意图识别
+
+判断一个 lead 是否真正有购买需求：
+
+**信号列表**：
+
+* 招聘采购/商务相关岗位
+* 发布“Looking for suppliers”帖子
+* 产品询价
+* 社交媒体表达采购意图
+
+**输出**：intent_score (0-100)
+**规则**：结合 NLP classification + keyword triggers
+
+---
+
+### 8. 联系可达性评估
+
+**评估是否可以联系这个线索**：
+
+| 来源            | 可能性评分维度    |
+| ------------- | ---------- |
+| Email         | 格式合法 / 验证率 |
+| LinkedIn DM   | 一级连接优先     |
+| 社交 Profile DM | 活跃度        |
+
+输出：contact_score
+
+---
+
+### 9. 总体 Lead-Score 计算器
+
+**公式**（可调整参数）：
+
+```
+total_score = w1*industry_score
+            + w2*intent_score
+            + w3*contact_score
+```
+
+输出：sorted list
+
+---
+
+# 四、细化功能模块（从前端到后台）
+
+---
+
+## 10. 客户情报卡（Lead Card）
+
+每个‘lead’呈现为完整情报卡，字段必须齐全：
+
+```
+{
+  company,
+  contacts: [{name, role, email, linkedin}],
+  product_fit_summary,
+  scores: {industry, intent, contact, overall},
+  snippets: [text from web],
+  source_platform
+}
+```
+
+**UI/存储**：可导出 PDF/CSV
+
+---
+
+## 11. 多平台重复/去重系统
+
+规则：
+
+* 域名标准化
+* 公司名 fuzzy match (Levenshtein)
+* contact email 唯一性
+  输出：清洁客户池
+
+---
+
+## 12. 多轮搜索策略器（Agent 大脑）
+
+策略能力：
+
+* 根据当前得分分布决定是否继续搜索
+* 自动调整 query 优化
+* 自动选择下一个 platform 重试
+
+**输出**：新的任务 queue
+
+---
+
+## 13. 任务队列与状态跟踪
+
+字段：
+
+```
+task_id,
+platform,
+query,
+status,
+results_count,
+last_run
+```
+
+---
+
+## 14. 意图预测与分类
+
+LLM 分类 API 负责：
+
+* 行业分类
+* 采购信号标记
+* 角色职位分类
+
+---
+
+# 五、渠道与触达功能（外贸商业核心）
+
+---
+
+## 15. 开发信模板生成
+
+基于客户情报，自动写：
+
+* 初次触达邮件
+* 跟进邮件
+* 重启邮件
+
+逻辑：
+
+* 自动提取客户痛点
+* 让邮件与客户 context 相关
+
+---
+
+## 16. 多语言支持
+
+自动对邮件/页面内容进行翻译并保留本地习惯：
+
+* EN/ES/FR/DE/CN 等基本市场
+
+---
+
+## 17. 发送记录与回复跟踪
+
+功能：
+
+* 邮件发送状态
+* opens/click/reply 统计
+* 自动标记状态
+
+---
+
+## 18. 内置通知
+
+* 新高分线索推送
+* 邮件打开提醒
+* 社交动态提醒
+
+---
+
+# 六、系统集成 & 生态功能
+
+---
+
+## 19. CRM 导出与同步
+
+支持：
+
+* CSV/Excel
+* HubSpot
+* Zoho CRM
+* Salesforce
+
+双向同步使数据不孤岛，方便业务流转。([Martech Zone][2])
+
+---
+
+## 20. Dashboard 与报表系统
+
+必备指标：
+
+* 新线索量
+* 高分线索占比
+* 邮件打开/回复率
+* 平台贡献度排行
+
+---
+
+## 21. 权限与团队协作
+
+角色：
+
+* Admin
+* Sales Rep
+* Reviewer
+* Data Engineer
+
+权限：
+
+* 数据可见性
+* 编辑权限
+* 审批权限
+
+---
+
+## 22. 数据保全与合规（GDPR/CAN-SPAM）
+
+自动：
+
+* 识别并标记敏感信息
+* 邮件 unsubscribe 控制
+* 数据保留策略
+
+---
+
+## 23. 扩展端点 / API
+
+让外部调用：
+
+* 添加新产品描述
+* 请求更多线索
+* 获取 dashboard 数据
+
+---
+
+### 参考架构原则（根据成熟 CRM 系统对比）
+
+优秀外贸 CRM / lead gen SaaS 产品都包含：
+
+* 自动 lead scoring
+* 多渠道数据集成
+* 多语言支持
+* CRM 对接
+* 可视化仪表盘
+* 团队协作与权限
+* 触达与跟进自动化 ([salesforce.com][3])
+
+[1]: https://buyersprint.com/2025/10/27/top-5-saas-tools-for-b2b-sales-lead-generation/?utm_source=chatgpt.com "Top 5 SaaS Tools for B2B Sales & Lead Generation"
+[2]: https://martech.zone/b2b-lead-generation-software-features-benefits-and-best-practices/?utm_source=chatgpt.com "B2B Lead Generation Software: Features, Benefits, And Best Practices | Martech Zone"
+[3]: https://www.salesforce.com/crm/b2b-crm//?utm_source=chatgpt.com "What Is B2B CRM? Your Complete Guide | Salesforce"

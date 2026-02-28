@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Agent Console</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lead Agent Console</h1>
+      <p>Web frontend + FastAPI backend workflow for B2B lead generation.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1) Product Parser</h2>
+        <div class="grid two">
+          <label>
+            LLM Provider
+            <select id="llmProvider">
+              <option value="openai">openai</option>
+              <option value="deepseek">deepseek</option>
+              <option value="claude">claude</option>
+            </select>
+          </label>
+          <label>
+            Price Hint
+            <input id="priceHint" placeholder="e.g. $99/month" />
+          </label>
+        </div>
+        <label>
+          Product Description
+          <textarea id="productDescription" rows="5" placeholder="Describe product, ICP, and pain points."></textarea>
+        </label>
+        <button id="parseProductBtn">Parse Product</button>
+        <pre id="productProfileOutput"></pre>
+      </section>
+
+      <section class="card">
+        <h2>2) ICP Builder</h2>
+        <div class="grid three">
+          <label>Geography<input id="icpGeography" placeholder="US, Germany, Mexico" /></label>
+          <label>Industry<input id="icpIndustry" placeholder="manufacturing, logistics" /></label>
+          <label>Role Titles<input id="icpRoles" placeholder="head of procurement, vp growth" /></label>
+          <label>Tech Stack<input id="icpTech" placeholder="hubspot, salesforce, apollo" /></label>
+          <label>Company Size Min<input id="icpCompanyMin" type="number" /></label>
+          <label>Company Size Max<input id="icpCompanyMax" type="number" /></label>
+          <label>Revenue Min<input id="icpRevenueMin" type="number" /></label>
+          <label>Revenue Max<input id="icpRevenueMax" type="number" /></label>
+          <label>Currency<input id="icpCurrency" value="USD" /></label>
+        </div>
+        <button id="normalizeIcpBtn">Normalize ICP</button>
+        <pre id="icpOutput"></pre>
+      </section>
+
+      <section class="card">
+        <h2>3) Search + Score</h2>
+        <div class="grid two">
+          <label>Query<input id="searchQuery" placeholder="B2B supplier lead generation" /></label>
+          <label>Limit / Platform<input id="searchLimit" type="number" value="5" min="1" max="25" /></label>
+        </div>
+        <div class="platforms" id="platformSelector">
+          <label><input type="checkbox" value="linkedin" checked />linkedin</label>
+          <label><input type="checkbox" value="facebook" />facebook</label>
+          <label><input type="checkbox" value="tiktok" />tiktok</label>
+          <label><input type="checkbox" value="youtube" />youtube</label>
+          <label><input type="checkbox" value="google" checked />google</label>
+          <label><input type="checkbox" value="b2b_db" />b2b_db</label>
+        </div>
+        <div class="actions">
+          <button id="runSearchBtn">Run Search</button>
+          <button id="scoreBtn">Score Leads</button>
+          <button id="dedupBtn">Deduplicate</button>
+          <button id="refreshBtn">Refresh Leads</button>
+          <a class="link-btn" href="/api/v1/leads/export?format=csv" target="_blank">Export CSV</a>
+          <a class="link-btn" href="/api/v1/leads/export?format=pdf" target="_blank">Export PDF</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4) Leads</h2>
+        <table id="leadsTable">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Platform</th>
+              <th>Industry</th>
+              <th>Intent</th>
+              <th>Contact</th>
+              <th>Overall</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card grid two">
+        <div>
+          <h2>5) Lead Card + Templates</h2>
+          <div id="leadCardOutput" class="panel">Select a lead row to load details.</div>
+          <div class="grid two">
+            <label>
+              Template Language
+              <select id="templateLanguage">
+                <option value="EN">EN</option>
+                <option value="ES">ES</option>
+                <option value="FR">FR</option>
+                <option value="DE">DE</option>
+                <option value="CN">CN</option>
+              </select>
+            </label>
+            <button id="templateBtn">Generate Templates</button>
+          </div>
+          <pre id="templateOutput"></pre>
+        </div>
+        <div>
+          <h2>6) Metrics + Ops</h2>
+          <div id="dashboardOutput" class="panel"></div>
+          <h3>Tasks</h3>
+          <ul id="tasksOutput"></ul>
+          <h3>Notifications</h3>
+          <ul id="notificationsOutput"></ul>
+          <h3>Strategy</h3>
+          <button id="strategyBtn">Recommend Next Actions</button>
+          <pre id="strategyOutput"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button id="resetBtn">Reset Demo Data</button>
+      <span id="status"></span>
+    </footer>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
