@@ -1,0 +1,125 @@
+version: 1
+name: LeadAgent
+summary: Commercial lead operations workspace moving toward a two-sided product: compliant real-person customer discovery from owned/licensed/permitted public sources, supplier sourcing from 1688-style marketplaces, and DeepSeek V4-backed planning/reporting.
+status: active
+phase: commercialization
+tags:
+  - FastAPI
+  - lead-ops
+  - outbound
+  - compliance
+  - productization
+features:
+  - id: FEAT-PIPELINE
+    title: Unified demo sourcing pipeline
+    status: done
+  - id: FEAT-WEB-CRAWL
+    title: Public web business contact crawl
+    status: done
+  - id: FEAT-DISCOVERY
+    title: Heuristic public URL discovery
+    status: done
+  - id: FEAT-IMPORT
+    title: Customer-owned lead import with deduplication
+    status: done
+  - id: FEAT-POLICY
+    title: Visible data policy and provenance model
+    status: done
+  - id: FEAT-DASHBOARD
+    title: Commercial review dashboard and lead detail view
+    status: done
+  - id: FEAT-EXPORT
+    title: CSV and PDF export for reviewed leads
+    status: done
+  - id: FEAT-VERTICAL-ENRICH
+    title: Repeatable vertical discovery-to-contact enrichment
+    status: done
+  - id: FEAT-VERTICAL-DISCOVERY
+    title: Batch discovery expansion for vertical public-web datasets
+    status: done
+  - id: FEAT-MULTILINGUAL-DISCOVERY
+    title: Multilingual query expansion for public-web discovery
+    status: done
+  - id: FEAT-LOCATION-ALIASES
+    title: Language-specific location alias expansion
+    status: done
+  - id: FEAT-CRM-EXPORT
+    title: CRM-ready export cleanup with country, company, and phone heuristics
+    status: done
+  - id: FEAT-PERSON-CONTACTS
+    title: Named contact extraction from public business pages
+    status: done
+  - id: FEAT-SCENARIO-BENCHMARK
+    title: Multi-scenario public-web benchmark runner
+    status: done
+  - id: FEAT-SOCIAL-FOUNDATION
+    title: Owned-social connector schema, connector catalog, and persisted sync API foundation
+    status: done
+  - id: FEAT-DEEPSEEK-V4
+    title: DeepSeek V4 model gateway and model-routing upgrade
+    status: in_progress
+  - id: FEAT-FIND-GOODS
+    title: Supplier sourcing page and marketplace report workflow
+    status: in_progress
+  - id: FEAT-CUSTOMER-DISCOVERY-V2
+    title: Product-to-buyer-hypothesis customer discovery workflow with person evidence
+    status: in_progress
+requirements:
+  - id: REQ-COMPLIANCE
+    title: Keep lead acquisition compliant
+    status: in_progress
+    priority: high
+    summary: Product now supports owned, first-party, first-party social, public, and licensed sources, persists local owned-social connector state, and explicitly excludes leaked or breached data and social profile scraping.
+  - id: REQ-RUNTIME
+    title: Make FastAPI the primary runtime
+    status: done
+    priority: high
+    summary: Startup path and frontend now target the FastAPI product app.
+  - id: REQ-COMMERCIAL-UX
+    title: Present the app as a saleable product
+    status: done
+    priority: high
+    summary: The frontend, docs, and dashboard were reframed around commercial lead operations rather than scraping experiments.
+progress:
+  summary: 15 done, 3 in progress, 2 planned, 2 blocked.
+  counts:
+    planned: 19
+    doing: 3
+    done: 15
+    blocked: 2
+blockers:
+  - Arbitrary-product automation is still unproven because the system does not yet convert product input into buyer hypotheses and discovery plans without operator help.
+  - Live validation with a real customer-owned dataset is still pending and inferred as the next proof point.
+  - Social connectors are still local file-backed and mocked at the integration edge; real OAuth, webhook verification, and database-backed persistence are not implemented yet.
+next_actions:
+  - Implement the DeepSeek V4 gateway first: env-driven models, `deepseek-v4-flash` default, report model routing, JSON parsing tests, and old-alias warnings.
+  - Add the Find Goods supplier sourcing data model, API surface, and frontend page, starting with a mock/permitted 1688 connector before real credentials are available.
+  - Add person-level evidence requirements for real customer discovery so "real people" are only emitted with source URL, source type, and verification confidence.
+  - Add a `product -> buyer hypotheses -> query plan -> source plan` strategy layer so public-web discovery can be evaluated from product input instead of hand-authored scenario terms.
+  - Benchmark at least 20 unrelated verticals and measure direct-company-hit rate versus directories before making broader generalization claims.
+  - Replace the local persisted social store with database-backed tables and encrypted token storage.
+  - Implement a real LinkedIn Lead Sync OAuth and webhook connector on top of the new connector catalog and persisted state model.
+  - Implement a real Meta lead-ads connector after the LinkedIn connector path is working.
+  - Increase named-person coverage beyond the current high-confidence public-site matches by expanding team-page, staff-directory, and role-line heuristics without falling back to social-platform scraping.
+  - Add official-directory and accreditation-source ingestion for institution-heavy scenarios because quick public-site benchmarks across five dealer/manufacturer use cases still produced very low named-contact yield.
+  - Tighten the remaining `Unknown` and `North America` country assignments by handling toll-free NANP numbers, no-phone rows, and a few unresolved country heuristics.
+  - Expand the scenario-file benchmark flow with reusable geography presets so vertical discovery can be reused beyond Hajj/Umrah without editing source.
+  - Add per-language blocklists and ranking tweaks so multilingual discovery can suppress low-signal directories and blog results more aggressively.
+  - Add first CRM connectors for HubSpot and Salesforce.
+  - Move legacy scraping-first code behind an explicit experimental flag.
+links:
+  - label: repo
+    value: https://github.com/RuthlessCreature/LeadAgent.git
+  - label: commercialization-plan
+    value: docs/commercialization-plan.md
+  - label: social-architecture
+    value: docs/social-media-compliant-architecture.md
+  - label: social-mvp-plan
+    value: docs/social-mvp-delivery-plan.md
+  - label: optimization-rfc
+    value: docs/leadagent-optimization-rfc-2026-04-30.md
+  - label: optimization-rfc-zh
+    value: docs/leadagent-optimization-rfc-2026-04-30.zh-CN.md
+meta:
+  source: codex-maintained
+  last_reviewed_at: "2026-04-30"

@@ -1,0 +1,68 @@
+[
+  {
+    "company": "123Dentist",
+    "email": "",
+    "phone": "1 604-870-9838",
+    "domain": "123dentist.com",
+    "source_url": "https://www.123dentist.com",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "7.50",
+    "raw_text_snippet": "Need a nearby dentist? With clinics across Canada, 123Dentist makes it simple to find personal, comfortable care close to home."
+  },
+  {
+    "company": "Bremadent Dental Laboratory",
+    "email": "",
+    "phone": "0208 520 8528",
+    "domain": "bremadent.co.uk",
+    "source_url": "https://www.bremadent.co.uk",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.62",
+    "raw_text_snippet": "Our Dental Laboratory in London offers digital dentistry, crown & bridge, implants, prosthetics & vacuum formed since 1969 in the UK & Europe."
+  },
+  {
+    "company": "Dentaly.org",
+    "email": "",
+    "phone": "0161 348 8738",
+    "domain": "dentaly.org",
+    "source_url": "https://www.dentaly.org/en/dentists-near-me/london/dental-clinics-london",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "12.18",
+    "raw_text_snippet": "Looking for dental treatment in London? See our List of the best dental clinics in London, and find the one that is in your area."
+  },
+  {
+    "company": "Full Service & Quality Dental Lab",
+    "email": "",
+    "phone": "+86 18575368050",
+    "domain": "istardentallab.com",
+    "source_url": "https://istardentallab.com/dental-laboratory-in-the-uk",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.95",
+    "raw_text_snippet": "Istar is the premier dental lab in the UK. We produce high-quality teeth and offer comprehensive services to dentists throughout the UK."
+  },
+  {
+    "company": "Mariner Dental Lab",
+    "email": "",
+    "phone": "77090 281-440-9222",
+    "domain": "marinerdental-lab.com",
+    "source_url": "https://marinerdental-lab.com",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.95",
+    "raw_text_snippet": "Mariner is a Houston dental lab and has been providing dentists with quality, affordable dental restoration for over 40 years."
+  },
+  {
+    "company": "Us Uk",
+    "email": "",
+    "phone": "03056 0-800-21-21-08",
+    "domain": "us-uk.bookimed.com",
+    "source_url": "https://us-uk.bookimed.com/clinics/country=united-states/direction=dentistry",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.45",
+    "raw_text_snippet": "Top Dental Treatment clinics in United States of America. ➔ ➔ ➔ The hospitals ranking is based on received requests, 75 patient reviews, prices, and information from 19 clinics"
+  }
+]

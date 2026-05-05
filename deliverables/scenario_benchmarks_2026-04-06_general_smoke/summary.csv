@@ -1,0 +1,5 @@
+scenario_id,product,buyer_type,queries,discovered_domains,seed_urls,visited_urls,contacts,people,people_with_email,people_with_phone,people_with_both,companies
+restaurant_pos_software,Restaurant POS and table-management software,Independent restaurants and small restaurant groups,18,16,10,15,8,1,1,0,0,7
+dental_equipment_distributor,Dental imaging and chair equipment distributor,Dental clinics and dental labs,21,43,10,16,7,0,0,0,0,6
+warehouse_barcode_software,Warehouse barcode and labeling software,3PL warehouses and fulfillment operators,18,31,10,20,11,0,0,0,0,8
+commercial_hvac_supplier,Commercial HVAC parts supplier,Mechanical and HVAC contractors,21,38,10,14,14,3,0,3,0,7

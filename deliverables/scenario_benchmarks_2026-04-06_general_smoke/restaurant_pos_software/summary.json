@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "restaurant_pos_software",
+    "product": "Restaurant POS and table-management software",
+    "buyer_type": "Independent restaurants and small restaurant groups",
+    "queries": "18",
+    "discovered_domains": "16",
+    "seed_urls": "10",
+    "visited_urls": "15",
+    "contacts": "8",
+    "people": "1",
+    "people_with_email": "1",
+    "people_with_phone": "0",
+    "people_with_both": "0",
+    "companies": "7"
+  }
+]

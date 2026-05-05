@@ -1,0 +1,2 @@
+scenario_id,product,buyer_type,queries,discovered_domains,seed_urls,visited_urls,contacts,people,people_with_email,people_with_phone,people_with_both,companies
+islamic_school_supplier,School uniforms and classroom furniture manufacturer,Islamic schools and Muslim academies,36,63,28,47,24,0,0,0,0,17

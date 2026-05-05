@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "mosque_tech_dealer",
+    "product": "Prayer hall audio and digital signage dealer",
+    "buyer_type": "Mosques and Islamic centers",
+    "queries": "36",
+    "discovered_domains": "64",
+    "seed_urls": "28",
+    "visited_urls": "39",
+    "contacts": "23",
+    "people": "0",
+    "people_with_email": "0",
+    "people_with_phone": "0",
+    "people_with_both": "0",
+    "companies": "16"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "company": "American HVAC Corp",
+    "email": "info@americanhvaccorp.com",
+    "phone": "11101 (347) 862-9594",
+    "domain": "americanhvac.nyc",
+    "source_url": "https://americanhvac.nyc",
+    "consent_status": "legitimate_interest",
+    "verification_status": "email_verified",
+    "overall_score": "27.25",
+    "raw_text_snippet": "American HVAC Corp is one of the best HVAC Contractor in New York, NY having specialisation in repair, maintenance, and installation services. Book Now!"
+  },
+  {
+    "company": "Christian Brothers Mechanical Services",
+    "email": "sales@cbhvac.com",
+    "phone": "1-800-605-2247",
+    "domain": "cbhvac.com",
+    "source_url": "https://cbhvac.com",
+    "consent_status": "legitimate_interest",
+    "verification_status": "email_verified",
+    "overall_score": "23.44",
+    "raw_text_snippet": "For a full-service commercial heating & cooling contractor, give Christian Brothers Mechanical Services a call at 1-800-205-2247."
+  },
+  {
+    "company": "Lions Heating & Air Conditioning",
+    "email": "info@lionshvac.com",
+    "phone": "866) 430-3950 9415",
+    "domain": "lionshvac.com",
+    "source_url": "https://lionshvac.com",
+    "consent_status": "legitimate_interest",
+    "verification_status": "email_verified",
+    "overall_score": "27.25",
+    "raw_text_snippet": "Lions Heating & Air is a leading HVAC contractor in Los Angeles, CA. We offer Air Conditioning installation, repair & maintenance of all major brands!"
+  },
+  {
+    "company": "Commercial HVAC Services in New York, NY",
+    "email": "solutions@abm.com",
+    "phone": "10006 212-297-0200",
+    "domain": "locations.abm.com",
+    "source_url": "https://locations.abm.com/ny/newyork/hvac-services-newyork-ny-1411.html",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "25.19",
+    "raw_text_snippet": "ABM provides HVAC and mechanical solutions in New York. Learn how we help you improve occupant comfort and reduce energy consumption.\nNew York ABM Office"
+  },
+  {
+    "company": "HVAC Specialist",
+    "email": "",
+    "phone": "0161 410 1310",
+    "domain": "hvac-specialist.co.uk",
+    "source_url": "https://hvac-specialist.co.uk",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.50",
+    "raw_text_snippet": "We are HVAC Specialists who can offer you the best rates on your project. Voted the Top Rated Company for heating, ventilation,  in the UK."
+  },
+  {
+    "company": "Inven",
+    "email": "",
+    "phone": "5001-10000 1934",
+    "domain": "inven.ai",
+    "source_url": "https://www.inven.ai/company-lists/top-25-hvac-companies-in-california",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.86",
+    "raw_text_snippet": "Explore top HVAC companies in California, including CoolSys and Air-Tro, offering cutting-edge heating and cooling solutions."
+  },
+  {
+    "company": "HVAC Contractors in Toronto",
+    "email": "",
+    "phone": "416-904-7212",
+    "domain": "trustedpros.ca",
+    "source_url": "https://trustedpros.ca/on/toronto/hvac",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "14.67",
+    "raw_text_snippet": "Ads Building 5.0 3 Reviews ( 1 Heating & Air Conditioning Related ) 885 Progress Ave Scarborough ON M1H 3G3 | Service area includes Toronto Bathroom Renovations , Kitchen Renovations , Heating & Air Conditioning Vathanan of Scarborough said: \"Recently a new Heat pump and attic installation was done by Ads Building. Out"
+  }
+]

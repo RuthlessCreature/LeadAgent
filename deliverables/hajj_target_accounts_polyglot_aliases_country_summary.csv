@@ -1,0 +1,25 @@
+country_inferred,region_inferred,companies,with_email,with_phone,with_both,priority_a
+United States,North America,73,55,69,51,21
+United Kingdom,Europe,41,36,40,35,15
+France,Europe,23,15,21,13,1
+Bangladesh,APAC,21,12,21,12,0
+Germany,Europe,19,19,19,19,6
+Netherlands,Europe,18,16,17,15,3
+Canada,North America,17,14,16,13,3
+Australia,APAC,15,11,14,10,5
+Malaysia,APAC,14,10,14,10,3
+Unknown,Unknown,13,13,1,1,0
+Indonesia,APAC,12,5,12,5,4
+South Africa,Africa,12,12,10,10,4
+Pakistan,APAC,9,6,9,6,0
+North America,Unknown,7,7,6,6,0
+Saudi Arabia,MENA,7,4,6,3,1
+Egypt,MENA,5,3,5,3,1
+New Zealand,APAC,5,4,5,4,1
+United Arab Emirates,MENA,3,2,3,2,0
+Morocco,MENA,2,0,2,0,0
+Turkey,MENA,2,1,2,1,1
+Belgium,Europe,1,1,1,1,1
+Qatar,MENA,1,1,1,1,0
+Tunisia,MENA,1,1,1,1,0
+Yemen,MENA,1,1,1,1,0

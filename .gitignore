@@ -1,0 +1,8 @@
+.runtime/
+__pycache__/
+.pytest_cache/
+*.ort
+/data/linkedin_edge_profile/ShaderCache
+/data/linkedin_edge_profile/extensions_crx_cache
+/data/linkedin_edge_profile_v2/component_crx_cache
+/data

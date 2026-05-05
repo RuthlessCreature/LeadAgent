@@ -1,0 +1,79 @@
+[
+  {
+    "company": "Alinea",
+    "email": "press@thealineagroup.com",
+    "phone": "",
+    "domain": "alinearestaurant.com",
+    "source_url": "https://www.alinearestaurant.com",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "20.00",
+    "raw_text_snippet": "Press Inquiries: press@thealineagroup.com"
+  },
+  {
+    "company": "Manuela",
+    "email": "info@manuela-la.com",
+    "phone": "323) 849-0480",
+    "domain": "manuela-la.com",
+    "source_url": "https://manuela-la.com",
+    "consent_status": "legitimate_interest",
+    "verification_status": "email_verified",
+    "overall_score": "21.25",
+    "raw_text_snippet": "A unique restaurant in LA uniting chefs, farmers and artists, and winner of Wine Spectator’s 2024 Award of Excellence. Perfect for brunch, lunch, & dinner."
+  },
+  {
+    "company": "Restaurant Business",
+    "email": "swirth@winsightmedia.com",
+    "phone": "",
+    "domain": "restaurantbusinessonline.com",
+    "source_url": "https://www.restaurantbusinessonline.com/top-100-independents",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "20.61",
+    "raw_text_snippet": "List of 100 top-grossing independent restaurants in America based on restaurant data like restaurant sales and average restaurant check"
+  },
+  {
+    "company": "Eater LA",
+    "email": "",
+    "phone": "+12132643303",
+    "domain": "la.eater.com",
+    "source_url": "https://la.eater.com/maps/best-big-party-group-dining-restaurant-los-angeles",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "7.50",
+    "raw_text_snippet": "Where to bring a crew and enjoy a big meal in LA"
+  },
+  {
+    "company": "LSE Summer School",
+    "email": "",
+    "phone": "+44 (0)20 7405 7686",
+    "domain": "lse.ac.uk",
+    "source_url": "https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school/content-hub/8-of-the-best-independent-restaurants-in-london",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "7.50",
+    "raw_text_snippet": "A blog article from Summer School student Brian Chen."
+  },
+  {
+    "company": "Tasting Table",
+    "email": "",
+    "phone": "908) 514-8038",
+    "domain": "tastingtable.com",
+    "source_url": "https://www.tastingtable.com/about",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "8.40",
+    "raw_text_snippet": "Breaking food industry news, cooking tips, recipes, reviews, rankings, and interviews - since 2008."
+  },
+  {
+    "company": "Zehnders",
+    "email": "",
+    "phone": "844) 207-7309",
+    "domain": "zehnders.com",
+    "source_url": "https://www.zehnders.com/top-100-independent-restaurants-in-the-united-states",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "12.95",
+    "raw_text_snippet": "Top 100 Independent Restaurants in the United States"
+  }
+]

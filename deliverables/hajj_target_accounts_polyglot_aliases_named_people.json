@@ -1,0 +1,72 @@
+[
+  {
+    "company": "Mafaza Travel and Hajj",
+    "contact_name": "Mr. Walid Abu-Sharakh",
+    "role": "",
+    "email": "mafaza@mafazatours.com",
+    "phone": "202-247-1535",
+    "domain": "mafazatours.com",
+    "source_url": "https://www.mafazatours.com/premium-hajj-package-from-usa",
+    "source_label": "Public website crawl",
+    "consent_status": "unknown",
+    "verification_status": "fully_verified",
+    "overall_score": "29.06",
+    "raw_text_snippet": "Please Contact: Mr. Walid Abu-Sharakh Email: mafaza@mafazatours.com Call: 703-635-7727 Cell: 202-247-1535"
+  },
+  {
+    "company": "MK Hajj & Umrah Tours",
+    "contact_name": "Dr Asfahaan Mirza",
+    "role": "",
+    "email": "",
+    "phone": "027 221 0399",
+    "domain": "mkhajjumrah.co.nz",
+    "source_url": "https://mkhajjumrah.co.nz",
+    "source_label": "Public website crawl",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.25",
+    "raw_text_snippet": "Dr Asfahaan Mirza: 027 221 0399"
+  },
+  {
+    "company": "MK Hajj & Umrah Tours",
+    "contact_name": "Dr Farhaan Mirza",
+    "role": "",
+    "email": "",
+    "phone": "027 5050 500",
+    "domain": "mkhajjumrah.co.nz",
+    "source_url": "https://mkhajjumrah.co.nz",
+    "source_label": "Public website crawl",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.25",
+    "raw_text_snippet": "Dr Farhaan Mirza: 027 5050 500"
+  },
+  {
+    "company": "MK Hajj & Umrah Tours",
+    "contact_name": "Haji Mohammed Kalam",
+    "role": "",
+    "email": "",
+    "phone": "021 234 7019",
+    "domain": "mkhajjumrah.co.nz",
+    "source_url": "https://mkhajjumrah.co.nz",
+    "source_label": "Public website crawl",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.25",
+    "raw_text_snippet": "Haji Mohammed Kalam: 021 234 7019"
+  },
+  {
+    "company": "MK Hajj & Umrah Tours",
+    "contact_name": "Shakyh Mohamed Patel",
+    "role": "",
+    "email": "",
+    "phone": "021 025 32786",
+    "domain": "mkhajjumrah.co.nz",
+    "source_url": "https://mkhajjumrah.co.nz",
+    "source_label": "Public website crawl",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "11.25",
+    "raw_text_snippet": "Shakyh Mohamed Patel: 021 025 32786‬"
+  }
+]

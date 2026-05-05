@@ -1,0 +1,79 @@
+[
+  {
+    "company": "Australian Islamic College",
+    "email": "info@aic.wa.edu.au",
+    "phone": "08) 9362 2100 139",
+    "domain": "aic.wa.edu.au",
+    "source_url": "https://aic.wa.edu.au/about-aic",
+    "consent_status": "legitimate_interest",
+    "verification_status": "email_verified",
+    "overall_score": "21.25",
+    "raw_text_snippet": "About AIC"
+  },
+  {
+    "company": "Gibraltar Leadership Academy",
+    "email": "ali.haroon@gibraltarleads.ca",
+    "phone": "",
+    "domain": "gibraltarleads.ca",
+    "source_url": "https://gibraltarleads.ca/about-us",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "16.25",
+    "raw_text_snippet": "About Us"
+  },
+  {
+    "company": "Courtesy. Commitment. Collaboration",
+    "email": "admin@houstonpeace.org",
+    "phone": "+1) 281-257-8988",
+    "domain": "houstonpeace.org",
+    "source_url": "https://houstonpeace.org",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "21.25",
+    "raw_text_snippet": "Home"
+  },
+  {
+    "company": "The Islamic Institute of Toronto Academy",
+    "email": "secretary@iitacademy.ca",
+    "phone": "3 (416) 335-9173",
+    "domain": "iitacademy.ca",
+    "source_url": "https://iitacademy.ca",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "21.25",
+    "raw_text_snippet": "The IIT Academy is an elementary Islamic School established by the Islamic Institute of Toronto (IIT). Our vision is to produce students who are fully"
+  },
+  {
+    "company": "Iman Academy",
+    "email": "southeast@imanacademy.org",
+    "phone": "1-281-204-8710",
+    "domain": "imanacademy.org",
+    "source_url": "https://imanacademy.org",
+    "consent_status": "unknown",
+    "verification_status": "email_verified",
+    "overall_score": "25.22",
+    "raw_text_snippet": "Why Iman Academy? We're one of the best Islamic schools in Houston TX, serving students pre-k through 12th grade. Come and visit one of our two campuses."
+  },
+  {
+    "company": "Islah Academy",
+    "email": "",
+    "phone": "90043 (323) 596-3456",
+    "domain": "islahacademy.org",
+    "source_url": "https://islahacademy.org",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "7.50",
+    "raw_text_snippet": "Islah Academy | South Los Angeles Muslim School"
+  },
+  {
+    "company": "Private School Review",
+    "email": "",
+    "phone": "205) 870-0422",
+    "domain": "privateschoolreview.com",
+    "source_url": "https://www.privateschoolreview.com/islamic-academy-of-alabama-profile",
+    "consent_status": "unknown",
+    "verification_status": "phone_verified",
+    "overall_score": "7.50",
+    "raw_text_snippet": "Islamic Academy Of Alabama in Birmingham, Alabama serves 203 students in grades Prekindergarten-12. View their 2026 profile to find tuition cost, acceptance rates, reviews and more."
+  }
+]

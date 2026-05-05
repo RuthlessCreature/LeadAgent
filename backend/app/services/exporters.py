@@ -26,6 +26,9 @@ def _flatten_cards(cards: list[LeadCard]) -> list[dict[str, str]]:
                 "contact_score": f"{card.scores.contact:.2f}",
                 "overall_score": f"{card.scores.overall:.2f}",
                 "source_platform": card.source_platform.value,
+                "source_summary": card.source_summary,
+                "consent_status": card.consent_status.value,
+                "verification_status": card.verification_status.value,
                 "summary": card.product_fit_summary,
             }
         )
@@ -47,6 +50,9 @@ def export_cards_csv(cards: list[LeadCard]) -> bytes:
         "contact_score",
         "overall_score",
         "source_platform",
+        "source_summary",
+        "consent_status",
+        "verification_status",
         "summary",
     ]
     writer = csv.DictWriter(output, fieldnames=fieldnames)

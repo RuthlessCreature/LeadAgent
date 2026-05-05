@@ -1,94 +1,139 @@
-# Lead Agent (Web + FastAPI)
+# LeadAgent
 
-This project implements a prompt-driven B2B lead generation system with:
+LeadAgent is now positioned as a commercial lead operations workspace for small sales teams, agencies, and export operators.
 
-- `FastAPI` backend for parsing, search orchestration, scoring, deduplication, outreach, dashboard, and integrations.
-- `Web frontend` (plain HTML/CSS/JS) for operating the full workflow in a browser.
+The product focus is:
 
-## Quick Start
+- find target accounts from compliant sources
+- find supplier and goods sources from marketplaces and supplier websites
+- score and review leads in one place
+- keep source provenance visible
+- activate outreach only when data is owned, public, or licensed
 
-1. Install dependencies:
+## What changed
+
+This repository previously mixed experimental scraping flows with partial product code.
+
+The primary product path is now:
+
+1. define a product and ICP
+2. run a demo sourcing pipeline
+3. crawl public business websites and directory pages
+4. import customer-owned lead data
+5. review source, consent, verification, and score
+6. export or sync the approved lead set
+
+The FastAPI app in `backend/app/main.py` is the primary runtime.
+
+## Capability boundary
+
+LeadAgent does **not** currently support a fully automatic `arbitrary product description -> customer list` flow.
+
+What it can do today:
+
+- score and review leads once a product profile, ICP, or owned list exists
+- discover public company URLs when the operator provides explicit discovery queries or scenario terms
+- crawl public business pages and extract company-level or occasional named-contact data
+
+What it still needs from the operator:
+
+- target-buyer hypotheses
+- discovery query terms or a benchmark scenario definition
+- validation that the product has a publicly discoverable buyer footprint
+
+## Data policy
+
+Allowed source classes:
+
+- first-party inbound leads
+- customer-owned CRM or CSV imports
+- public web evidence with business context
+- licensed B2B databases with provenance and opt-out support
+
+Prohibited source classes:
+
+- leaked or breached databases
+- stolen cookies, passwords, or unauthorized account access
+- records that were explicitly suppressed or opted out
+
+Demo data shipped with the app is synthetic and should be replaced before any real outreach.
+
+## Product surfaces
+
+- commercial dashboard in `frontend/`
+- ICP parsing and normalization
+- multi-source demo search
+- lead scoring, deduplication, and compliance scan
+- owned lead import API
+- public web crawl API for business websites and contact pages
+- public URL discovery API for heuristic search-based account finding
+- social connection APIs for owned LinkedIn and Meta lead sources
+- social connector catalog APIs for compliant connector setup
+- supplier sourcing plan, search, and report APIs
+- DeepSeek V4 model routing metadata and test APIs
+- CSV and PDF export
+- strategy and outreach template generation
+
+## Quick start
 
 ```bash
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
+python run.py
 ```
 
-If Playwright cannot find a local browser on your machine, run:
+Open `http://127.0.0.1:8000`.
 
-```bash
-python -m playwright install chromium
-```
+## Core API routes
 
-2. Run API + frontend:
+- `POST /api/v1/input/parse-product`
+- `POST /api/v1/input/icp/normalize`
+- `GET /api/v1/llm/models`
+- `POST /api/v1/llm/test`
+- `POST /api/v1/customer-discovery/plan`
+- `POST /api/v1/search/run`
+- `POST /api/v1/public-web/discover`
+- `POST /api/v1/public-web/crawl`
+- `POST /api/v1/sourcing/plan`
+- `POST /api/v1/sourcing/search`
+- `POST /api/v1/sourcing/report`
+- `GET /api/v1/sourcing/reports`
+- `GET /api/v1/sourcing/reports/{report_id}`
+- `GET /api/v1/social/connections`
+- `POST /api/v1/social/connections`
+- `POST /api/v1/social/connections/{connection_id}/sync`
+- `GET /api/v1/social/connectors`
+- `GET /api/v1/social/connectors/{connector_key}`
+- `GET /api/v1/social/overview`
+- `POST /api/v1/scoring/score`
+- `POST /api/v1/leads/import`
+- `POST /api/v1/compliance/scan`
+- `GET /api/v1/compliance/data-policy`
+- `GET /api/v1/dashboard`
+- `GET /api/v1/leads/export`
 
-```bash
-uvicorn main:app --reload --app-dir backend
-```
+## Commercial direction
 
-3. Open:
+The product direction now tracks three market expectations:
 
-```text
-http://127.0.0.1:8000/
-```
+- Apollo-style lead scoring and enrichment workflow
+- Snov-style activation and outbound enablement
+- Clay-style source transparency and operator control
 
-## Project Structure
-
-```text
-backend/
-  main.py
-  app/
-    main.py
-    models.py
-    store.py
-    services/
-frontend/
-  index.html
-  app.js
-  styles.css
-```
-
-## API Coverage (Prompt Modules)
-
-- Input layer:
-  - Product parsing: `POST /api/v1/input/parse-product`
-  - ICP normalize: `POST /api/v1/input/icp/normalize`
-- Search & execution:
-  - Multi-platform search: `POST /api/v1/search/run`
-  - Task queue/status: `GET /api/v1/tasks`
-- Scoring & filtering:
-  - Lead scoring: `POST /api/v1/scoring/score`
-  - Deduplicate: `POST /api/v1/leads/deduplicate`
-  - Strategy engine: `POST /api/v1/strategy/next`
-  - Intent/industry/role classification: `POST /api/v1/classify`
-- Lead operations:
-  - Lead list: `GET /api/v1/leads`
-  - Lead card: `GET /api/v1/leads/{lead_id}/card`
-  - Export CSV/PDF: `GET /api/v1/leads/export?format=csv|pdf`
-- Outreach:
-  - Template generation (EN/ES/FR/DE/CN): `POST /api/v1/outreach/templates`
-  - Event tracking: `POST /api/v1/outreach/events`
-  - Event stats: `GET /api/v1/outreach/stats`
-  - Notifications: `GET /api/v1/notifications`
-- Integration/governance:
-  - CRM export/sync: `POST /api/v1/crm/export`
-  - Dashboard metrics: `GET /api/v1/dashboard`
-  - Permission check: `POST /api/v1/permissions/check`
-  - Compliance scan: `POST /api/v1/compliance/scan`
-  - Ext endpoints: `/api/v1/ext/*`
+See `docs/commercialization-plan.md` for competitor notes, positioning, and launch direction.
 
 ## Notes
 
-- Search now uses live web results (DuckDuckGo with Bing fallback) with platform-scoped queries
-  like `site:linkedin.com`, `site:facebook.com`, `site:tiktok.com`, etc.
-- Default mode is people discovery (`SEARCH_TARGET=people`), which prioritizes profile URLs
-  such as LinkedIn `/in/`, YouTube `@handle`, and TikTok `@handle`.
-- Set `SEARCH_MODE=mock` to use the deterministic local dataset for offline/dev testing.
-- Optional env vars for search responsiveness:
-  - `SEARCH_MODE=live|mock` (default `live`)
-  - `SEARCH_TARGET=people|company` (default `people`)
-  - `SEARCH_DRIVER=playwright|http` (default `playwright`)
-  - `SEARCH_TIMEOUT=8` (seconds per upstream request)
-  - `SEARCH_QUERY_VARIANTS=2` (how many query variants per platform)
-- Connector endpoints for HubSpot/Zoho/Salesforce are scaffolded and can be replaced with real SDK calls.
-- In `playwright` mode the backend first tries local Edge/Chrome browser channels; if neither is usable,
-  install Playwright Chromium (`python -m playwright install chromium`).
+- Legacy Flask modules remain in the repo, but they are no longer the primary app path.
+- Experimental live scraping scripts are not the recommended commercial route.
+- If you need real production data, use `POST /api/v1/leads/import` with customer-owned or licensed records.
+- Public website crawling is supported for company sites, directory pages, and contact pages.
+- The public-web path works best for B2B or institution-facing products whose buyers have official public websites; it is not yet a universal customer-finding engine for any product category.
+- Social-media expansion should use owned-asset connectors and official platform workflows, not profile scraping. See `docs/social-media-compliant-architecture.md`.
+- FastAPI runtime state now persists locally to `.runtime/leadagent_store.json` for development flows, including social connections and sync runs.
+- Social platform page scraping is intentionally out of scope; use official APIs or authorized exports instead.
+- DeepSeek defaults now target the V4 API model family through env-driven model routing.
+- The first Find Goods workflow is available through sourcing plan/search/report APIs and the frontend supplier-search panel. The 1688 connector is scaffolded with mock/permitted data until official or partner API credentials are configured.
+- A reusable Hajj/Umrah target collection workflow is available in `scripts/collect_hajj_targets.py`.
+- A cross-vertical benchmark input template is available in `docs/benchmarks/general_b2b_smoke.json`.

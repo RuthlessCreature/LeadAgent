@@ -1,0 +1,6 @@
+scenario_id,product,buyer_type,queries,discovered_domains,seed_urls,visited_urls,contacts,people,people_with_email,people_with_phone,people_with_both,companies
+hajj_kits_wholesale,Hajj and Umrah accessories wholesaler,Hajj and Umrah travel agencies,36,66,28,53,29,0,0,0,0,24
+modest_apparel_manufacturer,Modest apparel manufacturer,Hijab and abaya retailers,36,71,28,46,16,0,0,0,0,13
+islamic_books_distributor,Islamic books and gifts distributor,Islamic bookstores and Muslim gift shops,36,45,28,43,21,0,0,0,0,14
+islamic_school_supplier,School uniforms and classroom furniture manufacturer,Islamic schools and Muslim academies,36,65,28,47,23,0,0,0,0,16
+mosque_tech_dealer,Prayer hall audio and digital signage dealer,Mosques and Islamic centers,36,59,28,43,34,0,0,0,0,20

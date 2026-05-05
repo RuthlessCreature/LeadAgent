@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from collections import Counter
 
-from app.models import DashboardMetrics, LeadCandidate, OutreachEvent
+from app.models import ConsentStatus, DashboardMetrics, LeadCandidate, OutreachEvent
 
 
 def build_dashboard(leads: list[LeadCandidate], events: list[OutreachEvent]) -> DashboardMetrics:
@@ -18,6 +18,8 @@ def build_dashboard(leads: list[LeadCandidate], events: list[OutreachEvent]) -> 
     reply_rate = (replied / sent) if sent else 0.0
 
     platform_counts = Counter(lead.platform.value for lead in leads)
+    source_counts = Counter(lead.source_type.value for lead in leads)
+    compliant_leads = len([lead for lead in leads if lead.consent_status != ConsentStatus.do_not_contact])
 
     return DashboardMetrics(
         new_leads=new_leads,
@@ -25,4 +27,6 @@ def build_dashboard(leads: list[LeadCandidate], events: list[OutreachEvent]) -> 
         email_open_rate=round(open_rate, 4),
         email_reply_rate=round(reply_rate, 4),
         platform_contribution=dict(platform_counts),
+        source_contribution=dict(source_counts),
+        compliant_leads=compliant_leads,
     )

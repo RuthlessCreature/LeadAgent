@@ -1,0 +1,17 @@
+[
+  {
+    "scenario_id": "commercial_hvac_supplier",
+    "product": "Commercial HVAC parts supplier",
+    "buyer_type": "Mechanical and HVAC contractors",
+    "queries": "21",
+    "discovered_domains": "38",
+    "seed_urls": "10",
+    "visited_urls": "14",
+    "contacts": "14",
+    "people": "3",
+    "people_with_email": "0",
+    "people_with_phone": "3",
+    "people_with_both": "0",
+    "companies": "7"
+  }
+]

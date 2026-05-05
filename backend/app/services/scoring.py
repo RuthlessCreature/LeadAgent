@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 
-from app.models import ICPDefinition, LeadCandidate, ProductProfile, ScoreWeights
+from app.models import ICPDefinition, LeadCandidate, LeadSourceType, ProductProfile, ScoreWeights, VerificationStatus
 from app.services.icp import icp_match_score
 from app.services.text_utils import jaccard_similarity, tokenize
 
@@ -62,6 +62,10 @@ def intent_score(lead: LeadCandidate) -> float:
 
 def contact_score(lead: LeadCandidate) -> float:
     score = 0
+    if lead.contact_name:
+        score += 15
+    if lead.role:
+        score += 5
     if lead.email and EMAIL_REGEX.match(lead.email):
         score += 45
     if lead.linkedin:
@@ -69,6 +73,10 @@ def contact_score(lead: LeadCandidate) -> float:
     if lead.phone:
         score += 20
     if lead.domain:
+        score += 10
+    if lead.source_type in {LeadSourceType.first_party, LeadSourceType.customer_import, LeadSourceType.licensed_database}:
+        score += 10
+    if lead.verification_status in {VerificationStatus.email_verified, VerificationStatus.fully_verified}:
         score += 10
     return _clamp_score(score)
 

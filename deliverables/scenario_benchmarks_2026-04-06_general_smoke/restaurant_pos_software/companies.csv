@@ -1,0 +1,8 @@
+company,email,phone,domain,source_url,consent_status,verification_status,overall_score,raw_text_snippet
+Alinea,press@thealineagroup.com,,alinearestaurant.com,https://www.alinearestaurant.com,unknown,email_verified,20.00,Press Inquiries: press@thealineagroup.com
+Manuela,info@manuela-la.com,323) 849-0480,manuela-la.com,https://manuela-la.com,legitimate_interest,email_verified,21.25,"A unique restaurant in LA uniting chefs, farmers and artists, and winner of Wine Spectator’s 2024 Award of Excellence. Perfect for brunch, lunch, & dinner."
+Restaurant Business,swirth@winsightmedia.com,,restaurantbusinessonline.com,https://www.restaurantbusinessonline.com/top-100-independents,unknown,email_verified,20.61,List of 100 top-grossing independent restaurants in America based on restaurant data like restaurant sales and average restaurant check
+Eater LA,,+12132643303,la.eater.com,https://la.eater.com/maps/best-big-party-group-dining-restaurant-los-angeles,unknown,phone_verified,7.50,Where to bring a crew and enjoy a big meal in LA
+LSE Summer School,,+44 (0)20 7405 7686,lse.ac.uk,https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school/content-hub/8-of-the-best-independent-restaurants-in-london,unknown,phone_verified,7.50,A blog article from Summer School student Brian Chen.
+Tasting Table,,908) 514-8038,tastingtable.com,https://www.tastingtable.com/about,unknown,phone_verified,8.40,"Breaking food industry news, cooking tips, recipes, reviews, rankings, and interviews - since 2008."
+Zehnders,,844) 207-7309,zehnders.com,https://www.zehnders.com/top-100-independent-restaurants-in-the-united-states,unknown,phone_verified,12.95,Top 100 Independent Restaurants in the United States

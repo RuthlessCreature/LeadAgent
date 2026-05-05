@@ -1,0 +1,62 @@
+[
+  {
+    "scenario_id": "restaurant_pos_software",
+    "product": "Restaurant POS and table-management software",
+    "buyer_type": "Independent restaurants and small restaurant groups",
+    "queries": "18",
+    "discovered_domains": "16",
+    "seed_urls": "10",
+    "visited_urls": "15",
+    "contacts": "8",
+    "people": "1",
+    "people_with_email": "1",
+    "people_with_phone": "0",
+    "people_with_both": "0",
+    "companies": "7"
+  },
+  {
+    "scenario_id": "dental_equipment_distributor",
+    "product": "Dental imaging and chair equipment distributor",
+    "buyer_type": "Dental clinics and dental labs",
+    "queries": "21",
+    "discovered_domains": "43",
+    "seed_urls": "10",
+    "visited_urls": "16",
+    "contacts": "7",
+    "people": "0",
+    "people_with_email": "0",
+    "people_with_phone": "0",
+    "people_with_both": "0",
+    "companies": "6"
+  },
+  {
+    "scenario_id": "warehouse_barcode_software",
+    "product": "Warehouse barcode and labeling software",
+    "buyer_type": "3PL warehouses and fulfillment operators",
+    "queries": "18",
+    "discovered_domains": "31",
+    "seed_urls": "10",
+    "visited_urls": "20",
+    "contacts": "11",
+    "people": "0",
+    "people_with_email": "0",
+    "people_with_phone": "0",
+    "people_with_both": "0",
+    "companies": "8"
+  },
+  {
+    "scenario_id": "commercial_hvac_supplier",
+    "product": "Commercial HVAC parts supplier",
+    "buyer_type": "Mechanical and HVAC contractors",
+    "queries": "21",
+    "discovered_domains": "38",
+    "seed_urls": "10",
+    "visited_urls": "14",
+    "contacts": "14",
+    "people": "3",
+    "people_with_email": "0",
+    "people_with_phone": "3",
+    "people_with_both": "0",
+    "companies": "7"
+  }
+]

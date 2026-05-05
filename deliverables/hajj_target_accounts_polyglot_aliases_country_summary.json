@@ -1,0 +1,218 @@
+[
+  {
+    "country_inferred": "United States",
+    "region_inferred": "North America",
+    "companies": "73",
+    "with_email": "55",
+    "with_phone": "69",
+    "with_both": "51",
+    "priority_a": "21"
+  },
+  {
+    "country_inferred": "United Kingdom",
+    "region_inferred": "Europe",
+    "companies": "41",
+    "with_email": "36",
+    "with_phone": "40",
+    "with_both": "35",
+    "priority_a": "15"
+  },
+  {
+    "country_inferred": "France",
+    "region_inferred": "Europe",
+    "companies": "23",
+    "with_email": "15",
+    "with_phone": "21",
+    "with_both": "13",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "Bangladesh",
+    "region_inferred": "APAC",
+    "companies": "21",
+    "with_email": "12",
+    "with_phone": "21",
+    "with_both": "12",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Germany",
+    "region_inferred": "Europe",
+    "companies": "19",
+    "with_email": "19",
+    "with_phone": "19",
+    "with_both": "19",
+    "priority_a": "6"
+  },
+  {
+    "country_inferred": "Netherlands",
+    "region_inferred": "Europe",
+    "companies": "18",
+    "with_email": "16",
+    "with_phone": "17",
+    "with_both": "15",
+    "priority_a": "3"
+  },
+  {
+    "country_inferred": "Canada",
+    "region_inferred": "North America",
+    "companies": "17",
+    "with_email": "14",
+    "with_phone": "16",
+    "with_both": "13",
+    "priority_a": "3"
+  },
+  {
+    "country_inferred": "Australia",
+    "region_inferred": "APAC",
+    "companies": "15",
+    "with_email": "11",
+    "with_phone": "14",
+    "with_both": "10",
+    "priority_a": "5"
+  },
+  {
+    "country_inferred": "Malaysia",
+    "region_inferred": "APAC",
+    "companies": "14",
+    "with_email": "10",
+    "with_phone": "14",
+    "with_both": "10",
+    "priority_a": "3"
+  },
+  {
+    "country_inferred": "Unknown",
+    "region_inferred": "Unknown",
+    "companies": "13",
+    "with_email": "13",
+    "with_phone": "1",
+    "with_both": "1",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Indonesia",
+    "region_inferred": "APAC",
+    "companies": "12",
+    "with_email": "5",
+    "with_phone": "12",
+    "with_both": "5",
+    "priority_a": "4"
+  },
+  {
+    "country_inferred": "South Africa",
+    "region_inferred": "Africa",
+    "companies": "12",
+    "with_email": "12",
+    "with_phone": "10",
+    "with_both": "10",
+    "priority_a": "4"
+  },
+  {
+    "country_inferred": "Pakistan",
+    "region_inferred": "APAC",
+    "companies": "9",
+    "with_email": "6",
+    "with_phone": "9",
+    "with_both": "6",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "North America",
+    "region_inferred": "Unknown",
+    "companies": "7",
+    "with_email": "7",
+    "with_phone": "6",
+    "with_both": "6",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Saudi Arabia",
+    "region_inferred": "MENA",
+    "companies": "7",
+    "with_email": "4",
+    "with_phone": "6",
+    "with_both": "3",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "Egypt",
+    "region_inferred": "MENA",
+    "companies": "5",
+    "with_email": "3",
+    "with_phone": "5",
+    "with_both": "3",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "New Zealand",
+    "region_inferred": "APAC",
+    "companies": "5",
+    "with_email": "4",
+    "with_phone": "5",
+    "with_both": "4",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "United Arab Emirates",
+    "region_inferred": "MENA",
+    "companies": "3",
+    "with_email": "2",
+    "with_phone": "3",
+    "with_both": "2",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Morocco",
+    "region_inferred": "MENA",
+    "companies": "2",
+    "with_email": "0",
+    "with_phone": "2",
+    "with_both": "0",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Turkey",
+    "region_inferred": "MENA",
+    "companies": "2",
+    "with_email": "1",
+    "with_phone": "2",
+    "with_both": "1",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "Belgium",
+    "region_inferred": "Europe",
+    "companies": "1",
+    "with_email": "1",
+    "with_phone": "1",
+    "with_both": "1",
+    "priority_a": "1"
+  },
+  {
+    "country_inferred": "Qatar",
+    "region_inferred": "MENA",
+    "companies": "1",
+    "with_email": "1",
+    "with_phone": "1",
+    "with_both": "1",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Tunisia",
+    "region_inferred": "MENA",
+    "companies": "1",
+    "with_email": "1",
+    "with_phone": "1",
+    "with_both": "1",
+    "priority_a": "0"
+  },
+  {
+    "country_inferred": "Yemen",
+    "region_inferred": "MENA",
+    "companies": "1",
+    "with_email": "1",
+    "with_phone": "1",
+    "with_both": "1",
+    "priority_a": "0"
+  }
+]

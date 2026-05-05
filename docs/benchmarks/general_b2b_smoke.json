@@ -1,0 +1,114 @@
+[
+  {
+    "scenario_id": "restaurant_pos_software",
+    "product": "Restaurant POS and table-management software",
+    "buyer_type": "Independent restaurants and small restaurant groups",
+    "query_terms": ["restaurant group", "independent restaurant", "family restaurant"],
+    "translated_terms": {},
+    "include_keywords": ["restaurant", "cafe", "bistro", "grill", "kitchen"],
+    "product_profile": {
+      "product_name": "Restaurant POS and table management",
+      "industry_tags": ["hospitality", "software", "restaurants"],
+      "feature_tags": ["pos", "payments", "table management", "menu sync"],
+      "use_cases": ["sales_outreach", "market_expansion"],
+      "target_roles": ["owner", "general manager", "operations manager"],
+      "price_range": "saas",
+      "exclude_tags": [],
+      "llm_provider": "mock"
+    },
+    "icp": {
+      "geography": ["US", "UK"],
+      "company_size": {"min": 1, "max": 500},
+      "industry": ["hospitality", "restaurants"],
+      "role_titles": ["owner", "general manager", "operations manager"],
+      "revenue_range": {"min": 0, "max": 100000000, "currency": "USD"},
+      "technology_stack": []
+    },
+    "locations": ["Chicago", "Dallas", "London", "USA", "UK"],
+    "languages": ["en"]
+  },
+  {
+    "scenario_id": "dental_equipment_distributor",
+    "product": "Dental imaging and chair equipment distributor",
+    "buyer_type": "Dental clinics and dental labs",
+    "query_terms": ["dental clinic", "dental practice", "dental lab"],
+    "translated_terms": {},
+    "include_keywords": ["dental", "clinic", "dentist", "orthodontic", "lab"],
+    "product_profile": {
+      "product_name": "Dental equipment distribution",
+      "industry_tags": ["healthcare", "dental", "distribution"],
+      "feature_tags": ["imaging", "chairs", "equipment", "installation"],
+      "use_cases": ["sales_outreach", "channel_sales"],
+      "target_roles": ["owner", "practice manager", "director"],
+      "price_range": "distributor",
+      "exclude_tags": [],
+      "llm_provider": "mock"
+    },
+    "icp": {
+      "geography": ["US", "Canada", "UK"],
+      "company_size": {"min": 1, "max": 1000},
+      "industry": ["healthcare", "dental"],
+      "role_titles": ["owner", "practice manager", "director"],
+      "revenue_range": {"min": 0, "max": 250000000, "currency": "USD"},
+      "technology_stack": []
+    },
+    "locations": ["Houston", "Toronto", "London", "USA", "Canada", "UK"],
+    "languages": ["en"]
+  },
+  {
+    "scenario_id": "warehouse_barcode_software",
+    "product": "Warehouse barcode and labeling software",
+    "buyer_type": "3PL warehouses and fulfillment operators",
+    "query_terms": ["3PL warehouse", "fulfillment center", "distribution center"],
+    "translated_terms": {},
+    "include_keywords": ["warehouse", "fulfillment", "distribution", "logistics", "3pl"],
+    "product_profile": {
+      "product_name": "Warehouse barcode and labeling software",
+      "industry_tags": ["logistics", "software", "warehousing"],
+      "feature_tags": ["barcode", "labeling", "inventory", "warehouse ops"],
+      "use_cases": ["sales_outreach", "market_expansion"],
+      "target_roles": ["operations manager", "warehouse manager", "logistics director"],
+      "price_range": "saas",
+      "exclude_tags": [],
+      "llm_provider": "mock"
+    },
+    "icp": {
+      "geography": ["US", "Australia"],
+      "company_size": {"min": 10, "max": 5000},
+      "industry": ["logistics", "warehousing"],
+      "role_titles": ["operations manager", "warehouse manager", "logistics director"],
+      "revenue_range": {"min": 0, "max": 1000000000, "currency": "USD"},
+      "technology_stack": []
+    },
+    "locations": ["Chicago", "Dallas", "Melbourne", "USA", "Australia"],
+    "languages": ["en"]
+  },
+  {
+    "scenario_id": "commercial_hvac_supplier",
+    "product": "Commercial HVAC parts supplier",
+    "buyer_type": "Mechanical and HVAC contractors",
+    "query_terms": ["hvac contractor", "mechanical contractor", "commercial hvac company"],
+    "translated_terms": {},
+    "include_keywords": ["hvac", "mechanical", "contractor", "heating", "air conditioning"],
+    "product_profile": {
+      "product_name": "Commercial HVAC parts supply",
+      "industry_tags": ["construction", "industrial", "hvac"],
+      "feature_tags": ["parts", "maintenance", "commercial supply", "contractor support"],
+      "use_cases": ["sales_outreach", "channel_sales"],
+      "target_roles": ["owner", "operations manager", "purchasing manager"],
+      "price_range": "supplier",
+      "exclude_tags": [],
+      "llm_provider": "mock"
+    },
+    "icp": {
+      "geography": ["US", "Canada", "UK"],
+      "company_size": {"min": 2, "max": 2000},
+      "industry": ["construction", "hvac"],
+      "role_titles": ["owner", "operations manager", "purchasing manager"],
+      "revenue_range": {"min": 0, "max": 500000000, "currency": "USD"},
+      "technology_stack": []
+    },
+    "locations": ["New York", "Toronto", "London", "USA", "Canada", "UK"],
+    "languages": ["en"]
+  }
+]

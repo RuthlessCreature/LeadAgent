@@ -80,8 +80,11 @@ def _extract_product_name(description: str) -> str:
         return "Unnamed Product"
 
     for line in lines[:3]:
-        if line.lower().startswith("product:"):
+        lowered = line.lower()
+        if lowered.startswith("product:") or line.startswith("商品:"):
             return line.split(":", 1)[1].strip()
+        if line.startswith("商品："):
+            return line.split("：", 1)[1].strip()
     return lines[0][:80]
 
 
